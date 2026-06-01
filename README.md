@@ -1,20 +1,21 @@
 # Jordan Zavaleta
 
-Applied Geophysics and GIS | Geological Engineering at UNI (Peru)
+Geological Engineering | Applied Geophysics | GIS | Machine Learning
 
 [![Website](https://img.shields.io/badge/Website-gisgeo.dev-0a66c2?style=for-the-badge)](https://gisgeo.dev)
 [![Location](https://img.shields.io/badge/Lima-Peru-1f6feb?style=for-the-badge)](https://github.com/jordan-zav)
 [![Email](https://img.shields.io/badge/Email-jordanzav%40gisgeo.dev-c14438?style=for-the-badge)](mailto:jordanzav@gisgeo.dev)
 
-Geoscientist and researcher in training focused on geophysics, GIS, remote sensing, and practical geodata workflows. I build tools and experiments that help connect field geology, spatial analysis, and reproducible computation.
+Geoscientist and researcher in training focused on geophysics, GIS, remote sensing, and reproducible geodata workflows. I build tools and experiments that connect field geology, spatial analysis, and computational methods for practical geological and mining applications.
 
 ## Focus Areas
 
-- Applied geophysics
+- Applied geophysics and geological interpretation
 - GIS and geospatial automation
 - Remote sensing and Earth observation
-- Geological data processing
+- Geological data processing and curation
 - Python tooling for geoscience workflows
+- Machine learning applied to geospatial and geological data
 
 ## Tech Stack
 
@@ -22,6 +23,7 @@ Geoscientist and researcher in training focused on geophysics, GIS, remote sensi
 ![QGIS](https://img.shields.io/badge/QGIS-589632?style=for-the-badge&logo=qgis&logoColor=white)
 ![GDAL](https://img.shields.io/badge/GDAL-5CAE58?style=for-the-badge)
 ![Google Earth Engine](https://img.shields.io/badge/Google%20Earth%20Engine-4285F4?style=for-the-badge&logo=googleearth&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-102230?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ## GitHub Stats
@@ -42,5 +44,6 @@ Geoscientist and researcher in training focused on geophysics, GIS, remote sensi
 ## Current Direction
 
 - Building reproducible geoscience tooling
-- Expanding GIS and remote sensing workflows
-- Sharing practical open repositories for the geoscience community
+- Expanding GIS, geophysics, and remote sensing workflows
+- Developing practical computational tools for geological and mining applications
+- Sharing open repositories that support geoscience learning and experimentation
