@@ -30,6 +30,8 @@ Geoscientist and researcher in training focused on geophysics, GIS, remote sensi
 
 Python, QGIS, GDAL, Google Earth Engine, Git, geospatial data processing, remote sensing workflows, and machine learning applied to geological data.
 
+![GitHub Metrics](./metrics.svg)
+
 ## Featured Projects
 
 - [GeoNormPy](https://github.com/jordan-zav/GeoNormPy): Python tools for geoscience-oriented data processing.
