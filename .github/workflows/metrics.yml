@@ -17,18 +17,16 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate GitHub profile metrics
-        uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate public repository language metrics
+        run: python scripts/generate_profile_metrics.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit generated metrics
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          user: jordan-zav
-          template: classic
-          filename: metrics.svg
-          config_timezone: America/Lima
-          base: header, activity, community, repositories, metadata
-          plugin_languages: yes
-          plugin_languages_sections: most-used
-          plugin_languages_details: percentage
-          plugin_languages_limit: 8
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+          commit_message: Update generated profile metrics
+          file_pattern: metrics.svg
