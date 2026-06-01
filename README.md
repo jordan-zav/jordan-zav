@@ -26,11 +26,9 @@ Geoscientist and researcher in training focused on geophysics, GIS, remote sensi
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-102230?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-## GitHub Stats
+## Main Languages and Tools
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jordan-zav&show_icons=true&theme=default&hide_title=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jordan-zav&layout=compact)
+Python, QGIS, GDAL, Google Earth Engine, Git, geospatial data processing, remote sensing workflows, and machine learning applied to geological data.
 
 ## Featured Projects
 
