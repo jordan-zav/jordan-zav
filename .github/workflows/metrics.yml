@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: true
+
 jobs:
   metrics:
     runs-on: ubuntu-latest
