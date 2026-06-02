@@ -35,11 +35,11 @@ def github_json(url: str) -> object:
         return json.loads(response.read().decode("utf-8"))
 
 
-def list_public_repos() -> list[dict]:
+def list_all_repos() -> list[dict]:
     repos: list[dict] = []
     page = 1
     while True:
-        url = f"https://api.github.com/users/{USER}/repos?type=owner&sort=updated&per_page=100&page={page}"
+        url = f"https://api.github.com/user/repos?type=owner&sort=updated&per_page=100&page={page}"
         batch = github_json(url)
         if not isinstance(batch, list) or not batch:
             break
@@ -87,12 +87,12 @@ def render_svg(repos: list[dict], languages: dict[str, int]) -> str:
     )
     return f"""<svg width="560" height="{height}" viewBox="0 0 560 {height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
 <title id="title">Jordan Zavaleta GitHub language metrics</title>
-<desc id="desc">Dynamic language summary generated from public GitHub repositories.</desc>
+<desc id="desc">Dynamic language summary generated from public and private GitHub repositories.</desc>
 <rect width="560" height="{height}" rx="12" fill="#0d1117"/>
 <text x="24" y="38" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">GitHub Profile Metrics</text>
-<text x="24" y="68" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Public repositories analyzed: {repo_count}</text>
+<text x="24" y="68" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Total repositories analyzed: {repo_count}</text>
 <text x="24" y="92" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Languages detected: {language_count}</text>
-<text x="24" y="124" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Most used languages by bytes across public source repositories</text>
+<text x="24" y="124" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Most used languages by bytes across all source repositories</text>
 <g font-family="Segoe UI, Arial, sans-serif">
 {rows}
 </g>
@@ -101,7 +101,7 @@ def render_svg(repos: list[dict], languages: dict[str, int]) -> str:
 
 
 def main() -> None:
-    repos = list_public_repos()
+    repos = list_all_repos()
     languages = aggregate_languages(repos)
     with open(OUTPUT, "w", encoding="utf-8", newline="\n") as file:
         file.write(render_svg(repos, languages))
