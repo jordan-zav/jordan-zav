@@ -1,11 +1,11 @@
 <svg width="560" height="486" viewBox="0 0 560 486" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
 <title id="title">Jordan Zavaleta GitHub language metrics</title>
-<desc id="desc">Dynamic language summary generated from public GitHub repositories.</desc>
+<desc id="desc">Dynamic language summary generated from public and private GitHub repositories.</desc>
 <rect width="560" height="486" rx="12" fill="#0d1117"/>
 <text x="24" y="38" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">GitHub Profile Metrics</text>
-<text x="24" y="68" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Public repositories analyzed: 7</text>
+<text x="24" y="68" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Total repositories analyzed: 7</text>
 <text x="24" y="92" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Languages detected: 7</text>
-<text x="24" y="124" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Most used languages by bytes across public source repositories</text>
+<text x="24" y="124" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Most used languages by bytes across all source repositories</text>
 <g font-family="Segoe UI, Arial, sans-serif">
 <text x="24" y="150" fill="#c9d1d9" font-size="14">QML</text><text x="520" y="150" fill="#8b949e" font-size="13" text-anchor="end">51.9%</text><rect x="24" y="160" width="460" height="10" rx="5" fill="#21262d"/><rect x="24" y="160" width="238" height="10" rx="5" fill="#8b949e"/>
 <text x="24" y="194" fill="#c9d1d9" font-size="14">Python</text><text x="520" y="194" fill="#8b949e" font-size="13" text-anchor="end">43.0%</text><rect x="24" y="204" width="460" height="10" rx="5" fill="#21262d"/><rect x="24" y="204" width="197" height="10" rx="5" fill="#3572A5"/>
