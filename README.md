@@ -8,6 +8,18 @@ Geological Engineering | Applied Geophysics | GIS | Machine Learning
 
 Geoscientist and researcher in training focused on geophysics, GIS, remote sensing, and reproducible geodata workflows. I build tools and experiments that connect field geology, spatial analysis, and computational methods for practical geological and mining applications.
 
+
+## ⚖️ License (Dual Licensing)
+
+This project is distributed under a **Dual Licensing** model:
+
+1. **Open Source Use (GNU GPLv3):** You can use, study, modify, and redistribute this software for free, provided that any modified version or derivative work is also 100% open source under the GNU GPLv3 license.
+2. **Commercial / Private Use (Commercial License):** If you wish to integrate this code into proprietary, closed-source, or commercial software (without the obligation to open your own source code under the GPLv3), you must acquire an exclusive commercial license. Please contact the author to negotiate terms.
+
+For more details, see the [LICENSE](LICENSE) file.
+
+---
+
 ## Focus Areas
 
 - Applied geophysics and geological interpretation
@@ -50,4 +62,4 @@ Python, QGIS, GDAL, Google Earth Engine, Git, geospatial data processing, remote
 
 ## License
 
-This project is licensed under the GNU GPLv3 and the Dual Licensing agreement described at the beginning of this document. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the GNU GPLv3 and the Dual Licensing agreement described above. See the [LICENSE](LICENSE) file for more details.
