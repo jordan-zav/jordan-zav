@@ -51,6 +51,3 @@ Python, QGIS, GDAL, Google Earth Engine, Git, geospatial data processing, remote
 - Developing practical computational tools for geological and mining applications
 - Sharing open repositories that support geoscience learning and experimentation
 
-## License
-
-This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
