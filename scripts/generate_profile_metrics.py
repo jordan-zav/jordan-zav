@@ -2,12 +2,23 @@ from __future__ import annotations
 
 import html
 import json
+import logging
 import os
+import sys
+import urllib.error
 import urllib.request
+from datetime import datetime
+from pathlib import Path
 
 
+# Configuración
 USER = "jordan-zav"
 OUTPUT = "metrics.svg"
+LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
+logger = logging.getLogger(__name__)
 COLORS = {
     "Python": "#3572A5",
     "HTML": "#e34c26",
@@ -23,6 +34,7 @@ COLORS = {
 
 
 def github_json(url: str) -> object:
+    """Realiza una solicitud autenticada a la API de GitHub."""
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "jordan-zav-profile-readme",
@@ -30,36 +42,78 @@ def github_json(url: str) -> object:
     token = os.environ.get("GITHUB_TOKEN")
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+
+    try:
+        request = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        logger.error(f"Error HTTP {e.code} en {url}: {e.reason}")
+        if e.code == 401:
+            logger.error("Token de GitHub inválido o expirado. Configure GITHUB_TOKEN.")
+        raise
+    except urllib.error.URLError as e:
+        logger.error(f"Error de conexión: {e.reason}")
+        raise
+    except Exception as e:
+        logger.error(f"Error inesperado al consultar {url}: {e}")
+        raise
 
 
 def list_all_repos() -> list[dict]:
+    """Obtiene todos los repositorios del usuario (excluyendo forks)."""
     repos: list[dict] = []
     page = 1
-    while True:
-        url = f"https://api.github.com/user/repos?type=owner&sort=updated&per_page=100&page={page}"
-        batch = github_json(url)
-        if not isinstance(batch, list) or not batch:
-            break
-        repos.extend(repo for repo in batch if not repo.get("fork"))
-        page += 1
-    return repos
+    logger.info("Obteniendo repositorios...")
+
+    try:
+        while True:
+            if os.environ.get("GITHUB_TOKEN"):
+                url = f"https://api.github.com/user/repos?type=owner&sort=updated&per_page=100&page={page}"
+            else:
+                url = f"https://api.github.com/users/{USER}/repos?type=owner&sort=updated&per_page=100&page={page}"
+            logger.debug(f"Consultando página {page}...")
+            batch = github_json(url)
+
+            if not isinstance(batch, list) or not batch:
+                break
+
+            repos.extend(repo for repo in batch if not repo.get("fork"))
+            page += 1
+
+        logger.info(f"✓ Se encontraron {len(repos)} repositorios")
+        return repos
+    except Exception as e:
+        logger.error(f"✗ Error al obtener repositorios: {e}")
+        raise
 
 
 def aggregate_languages(repos: list[dict]) -> dict[str, int]:
+    """Agrega y cuenta los bytes de código por lenguaje de todos los repositorios."""
     totals: dict[str, int] = {}
-    for repo in repos:
+    logger.info("Analizando lenguajes de programación...")
+
+    for index, repo in enumerate(repos, 1):
+        repo_name = repo.get("name", "unknown")
         languages_url = repo.get("languages_url")
+
         if not languages_url:
             continue
-        languages = github_json(languages_url)
-        if not isinstance(languages, dict):
+
+        try:
+            languages = github_json(languages_url)
+            if not isinstance(languages, dict):
+                continue
+
+            for language, bytes_count in languages.items():
+                totals[language] = totals.get(language, 0) + int(bytes_count)
+        except Exception as e:
+            logger.debug(f"Error al procesar {repo_name}: {e}")
             continue
-        for language, bytes_count in languages.items():
-            totals[language] = totals.get(language, 0) + int(bytes_count)
-    return dict(sorted(totals.items(), key=lambda item: item[1], reverse=True))
+
+    result = dict(sorted(totals.items(), key=lambda item: item[1], reverse=True))
+    logger.info(f"✓ Se detectaron {len(result)} lenguajes")
+    return result
 
 
 def svg_bar(language: str, value: int, total: int, y: int) -> str:
@@ -100,12 +154,39 @@ def render_svg(repos: list[dict], languages: dict[str, int]) -> str:
 """
 
 
-def main() -> None:
-    repos = list_all_repos()
-    languages = aggregate_languages(repos)
-    with open(OUTPUT, "w", encoding="utf-8", newline="\n") as file:
-        file.write(render_svg(repos, languages))
+def main() -> int:
+    """Genera el archivo SVG con las métricas del perfil de GitHub."""
+    try:
+        logger.info("=" * 60)
+        logger.info(
+            f"Iniciando generación de métricas ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})"
+        )
+        logger.info("=" * 60)
+
+        repos = list_all_repos()
+        languages = aggregate_languages(repos)
+
+        if not languages:
+            logger.warning("No se encontraron lenguajes. El archivo SVG puede estar vacío.")
+
+        output_path = Path(__file__).resolve().parents[1] / OUTPUT
+        svg_content = render_svg(repos, languages)
+
+        with open(output_path, "w", encoding="utf-8", newline="\n") as file:
+            file.write(svg_content)
+
+        logger.info(f"✓ Archivo generado exitosamente: {output_path}")
+        logger.info("=" * 60)
+        return 0
+
+    except KeyboardInterrupt:
+        logger.warning("Proceso interrumpido por el usuario.")
+        return 130
+    except Exception as e:
+        logger.error(f"✗ Error fatal: {e}")
+        logger.info("=" * 60)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
