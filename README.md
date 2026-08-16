@@ -8,6 +8,9 @@ Geological Engineering | Applied Geophysics | GIS | Machine Learning
 
 Geoscientist and researcher in training focused on geophysics, GIS, remote sensing, and reproducible geodata workflows. I build tools and experiments that connect field geology, spatial analysis, and computational methods for practical geological and mining applications.
 
+
+---
+
 ## Focus Areas
 
 - Applied geophysics and geological interpretation
@@ -47,3 +50,4 @@ Python, QGIS, GDAL, Google Earth Engine, Git, geospatial data processing, remote
 - Expanding GIS, geophysics, and remote sensing workflows
 - Developing practical computational tools for geological and mining applications
 - Sharing open repositories that support geoscience learning and experimentation
+
