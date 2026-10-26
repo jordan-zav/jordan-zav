@@ -86,12 +86,10 @@ Google Earth Engine · Astro/TypeScript · GitHub Actions
 
 ![GitHub Metrics](./metrics.svg)
 
-The metrics graphic summarizes language bytes in public, non-fork repositories.
-It excludes private repositories and project deliverables. GitHub Actions
-generates it automatically; the local Windows task requests an update at 09:00
-in Lima, with a daily cloud fallback scheduled at 09:17. Scheduled runs may be
-delayed by GitHub. These statistics describe code distribution, not proficiency
-or scientific quality.
+The metrics graphic is generated automatically from language bytes in public,
+non-fork repositories. It excludes private repositories and project deliverables.
+These statistics describe code distribution, not proficiency or scientific
+quality.
 
 ## Contact
 
