@@ -20,6 +20,7 @@ import json
 import logging
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime
@@ -58,42 +59,51 @@ def github_json(url: str) -> object:
     if token:
         headers["Authorization"] = f"Bearer {token}"
 
-    try:
-        request = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        logger.error(f"Error HTTP {e.code} en {url}: {e.reason}")
-        if e.code == 401:
-            logger.error("Token de GitHub inválido o expirado. Configure GITHUB_TOKEN.")
-        raise
-    except urllib.error.URLError as e:
-        logger.error(f"Error de conexión: {e.reason}")
-        raise
-    except Exception as e:
-        logger.error(f"Error inesperado al consultar {url}: {e}")
-        raise
+    for attempt in range(3):
+        try:
+            request = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as error:
+            # Never retry authentication failures or hammer a rate-limited API.
+            # Long waits are left to the next scheduled run; keep the existing SVG.
+            retryable = error.code in {500, 502, 503, 504}
+            delay = 2 ** attempt
+            retry_after = error.headers.get("Retry-After") if error.headers else None
+            if retry_after is not None:
+                try:
+                    delay = max(delay, float(retry_after))
+                except ValueError:
+                    raise error
+            if not retryable or delay > 30 or attempt == 2:
+                raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 2:
+                raise
+            delay = 2 ** attempt
+        logger.warning("Temporary GitHub API failure; retrying in %s seconds", delay)
+        time.sleep(delay)
+    raise RuntimeError("GitHub request did not complete")
 
 
 def list_all_repos() -> list[dict]:
-    """Obtiene todos los repositorios del usuario (excluyendo forks)."""
+    """Obtiene solo repositorios publicos del perfil, excluyendo forks."""
     repos: list[dict] = []
     page = 1
     logger.info("Obteniendo repositorios...")
 
     try:
         while True:
-            if os.environ.get("GITHUB_TOKEN"):
-                url = f"https://api.github.com/user/repos?type=owner&sort=updated&per_page=100&page={page}"
-            else:
-                url = f"https://api.github.com/users/{USER}/repos?type=owner&sort=updated&per_page=100&page={page}"
+            url = f"https://api.github.com/users/{USER}/repos?type=owner&sort=full_name&per_page=100&page={page}"
             logger.debug(f"Consultando página {page}...")
             batch = github_json(url)
 
-            if not isinstance(batch, list) or not batch:
+            if not isinstance(batch, list):
+                raise ValueError("Unexpected GitHub repository response")
+            if not batch:
                 break
 
-            repos.extend(repo for repo in batch if not repo.get("fork"))
+            repos.extend(repo for repo in batch if not repo.get("fork") and not repo.get("private"))
             page += 1
 
         logger.info(f"✓ Se encontraron {len(repos)} repositorios")
@@ -110,23 +120,20 @@ def aggregate_languages(repos: list[dict]) -> dict[str, int]:
 
     for index, repo in enumerate(repos, 1):
         repo_name = repo.get("name", "unknown")
+        if repo.get("private") or repo.get("fork"):
+            continue
         languages_url = repo.get("languages_url")
 
         if not languages_url:
-            continue
+            raise ValueError(f"Missing language URL for {repo_name}")
 
-        try:
-            languages = github_json(languages_url)
-            if not isinstance(languages, dict):
-                continue
+        languages = github_json(languages_url)
+        if not isinstance(languages, dict):
+            raise ValueError(f"Unexpected language response for {repo_name}")
+        for language, bytes_count in languages.items():
+            totals[language] = totals.get(language, 0) + int(bytes_count)
 
-            for language, bytes_count in languages.items():
-                totals[language] = totals.get(language, 0) + int(bytes_count)
-        except Exception as e:
-            logger.debug(f"Error al procesar {repo_name}: {e}")
-            continue
-
-    result = dict(sorted(totals.items(), key=lambda item: item[1], reverse=True))
+    result = dict(sorted(totals.items(), key=lambda item: (-item[1], item[0])))
     logger.info(f"✓ Se detectaron {len(result)} lenguajes")
     return result
 
@@ -156,12 +163,12 @@ def render_svg(repos: list[dict], languages: dict[str, int]) -> str:
     )
     return f"""<svg width="560" height="{height}" viewBox="0 0 560 {height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
 <title id="title">Jordan Zavaleta GitHub language metrics</title>
-<desc id="desc">Dynamic language summary generated from public and private GitHub repositories.</desc>
+<desc id="desc">Language summary generated only from public, non-fork GitHub repositories.</desc>
 <rect width="560" height="{height}" rx="12" fill="#0d1117"/>
 <text x="24" y="38" fill="#58a6ff" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">GitHub Profile Metrics</text>
 <text x="24" y="68" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Total repositories analyzed: {repo_count}</text>
 <text x="24" y="92" fill="#c9d1d9" font-family="Segoe UI, Arial, sans-serif" font-size="14">Languages detected: {language_count}</text>
-<text x="24" y="124" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Most used languages by bytes across all source repositories</text>
+<text x="24" y="124" fill="#8b949e" font-family="Segoe UI, Arial, sans-serif" font-size="13">Language share by bytes in public source repositories</text>
 <g font-family="Segoe UI, Arial, sans-serif">
 {rows}
 </g>
@@ -182,13 +189,14 @@ def main() -> int:
         languages = aggregate_languages(repos)
 
         if not languages:
-            logger.warning("No se encontraron lenguajes. El archivo SVG puede estar vacío.")
+            raise ValueError("No language data received; preserving the existing SVG")
 
         output_path = Path(__file__).resolve().parents[1] / OUTPUT
         svg_content = render_svg(repos, languages)
 
-        with open(output_path, "w", encoding="utf-8", newline="\n") as file:
-            file.write(svg_content)
+        temporary_path = output_path.with_suffix(".svg.tmp")
+        temporary_path.write_text(svg_content, encoding="utf-8", newline="\n")
+        temporary_path.replace(output_path)
 
         logger.info(f"✓ Archivo generado exitosamente: {output_path}")
         logger.info("=" * 60)

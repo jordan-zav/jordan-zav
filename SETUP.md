@@ -1,74 +1,54 @@
-# 🚀 Actualizador de Métricas del Perfil
+# Profile metrics automation
 
-## Configuración Inicial
+The generator summarizes language bytes in public, non-fork repositories owned
+by jordan-zav. Private repositories and project deliverables are excluded even
+when an authentication token is present. It does not rewrite the profile text.
 
-### 1. Establecer el Token de GitHub (Recomendado)
+## GitHub Actions
 
-Sin token, el generador analiza únicamente repositorios públicos. Para incluir repositorios privados y evitar límites bajos de la API, configura un token:
+The Metrics workflow generates metrics.svg and commits that file when it
+changes. It uses the built-in GitHub Actions token; no personal access token or
+private-repository access is required. The workflow grants contents write
+permission for its generated commit.
 
-**Windows PowerShell:**
-```powershell
-[Environment]::SetEnvironmentVariable("GITHUB_TOKEN", "tu_token_aqui", "User")
-```
+The daily cloud fallback is scheduled at 14:17 UTC, or 09:17 in Lima. GitHub may
+delay scheduled runs. A manual run is available under Actions → Metrics → Run
+workflow. Updates to the generator also trigger a run. Concurrent updates are
+serialized.
 
-**Windows CMD:**
-```cmd
-setx GITHUB_TOKEN "tu_token_aqui"
-```
+Transient network and server failures receive bounded retries. Authentication
+or sustained API failures stop generation and preserve the previous SVG;
+incomplete repository data is never committed as a successful refresh.
+API rate-limit handling follows the
+[GitHub REST API guidance](https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api).
 
-Para obtener tu token:
-1. Ve a https://github.com/settings/tokens
-2. Para un token clásico que deba leer repositorios privados, habilita `repo`. Si solo necesitas repositorios públicos, no configures ningún token.
-3. Cópialo y úsalo en el comando anterior
+## Windows task at 09:00
 
-## Uso
+Install GitHub CLI and authenticate the current Windows user using gh auth login
+with an account allowed to run this repository's workflow. Do not store tokens
+in repository files. Run Setup-Automation.ps1 from the checkout you intend to
+keep. Re-run it after moving the checkout. Replacing an existing elevated task
+may require an administrator session.
 
-### Opción 1: Doble clic (Más fácil)
-```
-✓ Solo haz doble clic en: update-metrics.bat
-```
+The task requests the same cloud workflow at 09:00 and at this user's logon.
+It catches up after a missed run when the user is logged in and the network is
+available. Two retries are configured at five-minute intervals. The explicit
+GitHub CLI path avoids a stale Task Scheduler PATH.
 
-### Opción 2: Terminal (Con más control)
-```powershell
-.\update-metrics.bat
-```
+Update-Metrics.ps1 dispatches the workflow without modifying the local Git
+checkout. This avoids rebase conflicts with cloud-generated metrics. Successful
+dispatch means GitHub accepted the request; the actual generation result is
+reported in Actions. The daily cloud fallback works with this PC switched off.
 
-## Automatización (Windows Task Scheduler)
+Run update-metrics.bat -CheckOnly to verify workflow access without dispatching
+an update. Run update-metrics.bat to request an update. The local DevResources
+runner is used when present. Logs are stored outside Git under
+LOCALAPPDATA/jordan-zav/profile-metrics/logs; GitHub stores the generation logs.
 
-El script de automatización configurará una tarea programada con dos desencadenadores:
-1. **Diariamente** a las 09:00 AM.
-2. **Al iniciar sesión (logon)** cada vez que enciendas tu computadora.
+## Local development
 
-### Configuración automática (Recomendada)
-Para registrar la tarea automáticamente:
-1. Haz clic derecho sobre `setup-automation.bat` (o ejecuta `setup-automation.vbs`) y selecciona **Ejecutar como administrador**.
-2. ¡Listo! La tarea quedará registrada con ambos desencadenadores.
-
-### Configuración manual (Alternativa)
-Si prefieres hacerlo manualmente:
-1. Abre el **Programador de tareas** (busca "Task Scheduler").
-2. Clic derecho → **Crear tarea básica...**
-3. Nombre: `Update GitHub Profile Metrics`
-4. Desencadenador: Selecciona **Al iniciar el equipo** (o **Al iniciar sesión**) y/o **Diariamente**.
-5. Acción: Iniciar un programa → Selecciona `update-metrics.bat`.
-6. Asegúrate de configurar la carpeta del repositorio como directorio de inicio en las propiedades de la acción.
-
-## Qué hace el script
-
-- ✓ Obtiene todos tus repositorios públicos y privados
-- ✓ Analiza los lenguajes de programación usados
-- ✓ Genera un SVG con las estadísticas
-- ✓ Actualiza el archivo `metrics.svg`
-- ✓ Hace commit y push automáticamente
-
-## Resultado
-
-El archivo `metrics.svg` se actualiza automáticamente y puedes agregarlo a tu README de perfil:
-
-```markdown
-![GitHub Profile Metrics](./metrics.svg)
-```
-
----
-
-**Nota:** Asegúrate de tener configurado Git correctamente y acceso de push al repositorio.
+Run the Python tests and Ruff checks using the repository's DEVRESOURCES_RUN.cmd
+on configured workstations. The generator can also run directly with Python
+3.11. An optional GITHUB_TOKEN raises API limits while keeping the same
+public-only scope. The README's biography and project descriptions are edited
+manually; the daily job updates only metrics.svg.

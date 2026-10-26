@@ -2,10 +2,15 @@
 
 # Jordan Zavaleta
 
-**Geological engineering · applied geophysics · GIS · scientific software**
+**Geological engineering student at UNI · applied geophysics · GIS · scientific software**
 
 I build open and reproducible tools that connect geological interpretation,
 potential-field geophysics, remote sensing, terrain analysis and field-ready GIS.
+
+I study Geological Engineering at Universidad Nacional de Ingeniería in Lima,
+Peru. My work connects mineral exploration, environmental hydrogeology and
+geological hazards with reproducible computational methods. Alongside software
+development, I contribute to research, technical training and student outreach.
 
 [![Website](https://img.shields.io/badge/website-gisgeo.dev-2563eb)](https://gisgeo.dev)
 [![Location](https://img.shields.io/badge/location-Lima%2C%20Peru-7c3aed)](https://github.com/jordan-zav)
@@ -29,9 +34,9 @@ potential-field geophysics, remote sensing, terrain analysis and field-ready GIS
 
 | Project | Purpose | Stack |
 | --- | --- | --- |
-| [TerraWorkbench](https://github.com/jordan-zav/TerraWorkbench) | Gravity and magnetic processing, FFT filter stacks and SimPEG inversion in QGIS | QGIS, Python, Harmonica, SimPEG |
+| [GeoRamp](https://github.com/jordan-zav/GeoRamp) | Scientific colour ramps, interactive histograms and raster styling | QGIS, Python |
 | [PeruSpatial Hub](https://github.com/jordan-zav/Peruspatial-Hub) | Search and load official Peruvian ArcGIS REST/WMS services in QGIS | QGIS, Python, REST, WMS |
-| [MUSA](https://github.com/jordan-zav/MUSA) | Global/local multifractal analysis with reliability and GIS products | Python, NumPy, GeoPandas |
+| [MUSA](https://github.com/jordan-zav/MUSA) | Global/local multifractal analysis, moving windows and structural GIS analysis | Python, NumPy, GeoPandas |
 | [GeoNormPy](https://github.com/jordan-zav/GeoNormPy) | Reproducible CIPW normative mineralogy from whole-rock chemistry | Python, pandas |
 | [QGIS-RRIM](https://github.com/jordan-zav/QGIS-RRIM) | Slope, differential openness and RRIM RGB terrain visualization | QGIS, GDAL, NumPy |
 | [MIRAGE](https://github.com/jordan-zav/MIRAGE) | Multiscale extraction of geological and archaeological raster signatures | Python, scikit-image, GeoPandas |
@@ -40,6 +45,20 @@ potential-field geophysics, remote sensing, terrain analysis and field-ready GIS
 
 More project pages, manuals and research material are available at
 [gisgeo.dev](https://gisgeo.dev).
+
+## Research, training and community
+
+- Undergraduate research at UNI on environmental hydrogeology and the impact of
+  mine tailings on groundwater resources.
+- Applied work combining geophysical, LiDAR and optical data for archaeological
+  research, with technical documentation and team training.
+- Seequent Student Associate for Leapfrog Geo and Oasis montaj, supporting
+  geological modeling and geophysical training at UNI.
+- Member of the SEG Sustainability Committee for 2026–2027, with an interest in
+  accessible geoscience data and education across Latin America.
+- Technical presentations on multifractal structural analysis, igneous rock
+  classification and modular geoscience software; student event organization
+  and open educational resources.
 
 ## Working principles
 
@@ -67,8 +86,12 @@ Google Earth Engine · Astro/TypeScript · GitHub Actions
 
 ![GitHub Metrics](./metrics.svg)
 
-The metrics graphic is generated from public GitHub data by the workflow in
-this repository. It is an activity summary, not a measure of scientific quality.
+The metrics graphic summarizes language bytes in public, non-fork repositories.
+It excludes private repositories and project deliverables. GitHub Actions
+generates it automatically; the local Windows task requests an update at 09:00
+in Lima, with a daily cloud fallback scheduled at 09:17. Scheduled runs may be
+delayed by GitHub. These statistics describe code distribution, not proficiency
+or scientific quality.
 
 ## Contact
 

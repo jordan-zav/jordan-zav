@@ -2,32 +2,39 @@ name: Metrics
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "17 14 * * *"
   workflow_dispatch:
   push:
     branches:
       - main
     paths:
       - ".github/workflows/metrics.yml"
+      - "scripts/generate_profile_metrics.py"
 
 permissions:
   contents: write
 
 concurrency:
   group: profile-metrics
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   metrics:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Generate public repository language metrics
         run: python scripts/generate_profile_metrics.py
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Commit generated metrics
         uses: stefanzweifel/git-auto-commit-action@v5
