@@ -1,3 +1,5 @@
+<p align="center"><strong>English</strong> · <a href="README.es.md">Español</a></p>
+
 <div align="center">
 
 # Jordan Zavaleta
