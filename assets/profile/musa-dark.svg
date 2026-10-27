@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+  <title id="title">MUSA</title>
+  <desc id="desc">Global and local multifractal analysis with reproducible GIS products. Project navigation card.</desc>
+  <g font-family="Arial"><rect x="1" y="1" width="638" height="188" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <path d="M16 1h608" stroke="#c4b5fd" stroke-width="3"/>
+  <rect x="24" y="25" width="70" height="70" rx="13" fill="#21262d"/>
+  <g transform="translate(35 35)" color="#c4b5fd"><g fill="none" stroke="#c4b5fd" stroke-width="2.2"><path d="M5 6v33h38M9 31c8-1 9-19 18-19s9 15 15 16"/><circle cx="16" cy="23" r="2" fill="#c4b5fd"/><circle cx="27" cy="12" r="2" fill="#c4b5fd"/></g></g>
+  <text font-family="Arial" x="112" y="39" font-size="14" fill="#c4b5fd">Python + desktop · Spatial analysis</text>
+  <text font-family="Arial" x="112" y="75" font-size="30" font-weight="700" fill="#f0f6fc">MUSA</text>
+  <text font-family="Arial" x="26" y="125" font-size="20" fill="#c9d1d9">Global and local multifractal analysis</text>
+  <text font-family="Arial" x="26" y="151" font-size="20" fill="#c9d1d9">with reproducible GIS products.</text>
+  <path d="M578 146h28m-9-9 9 9-9 9" fill="none" stroke="#c4b5fd" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

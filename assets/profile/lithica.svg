@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+  <title id="title">Lithica Suite</title>
+  <desc id="desc">A geoscience ecosystem for fieldwork, mapping, reference and learning. Project navigation card.</desc>
+  <g font-family="Arial"><rect x="1" y="1" width="638" height="188" rx="14" fill="#ffffff" stroke="#d8e1ec" stroke-width="2"/>
+  <path d="M16 1h608" stroke="#0369a1" stroke-width="3"/>
+  <rect x="24" y="25" width="70" height="70" rx="13" fill="#f0f9ff"/>
+  <g transform="translate(35 35)" color="#0369a1"><g fill="none" stroke="#0369a1" stroke-width="2.2"><path d="m3 15 21-11 21 11-21 11zM3 25l21 11 21-11M3 35l21 11 21-11"/></g></g>
+  <text font-family="Arial" x="112" y="39" font-size="14" fill="#0369a1">Fieldwork · GIS · Learning</text>
+  <text font-family="Arial" x="112" y="75" font-size="30" font-weight="700" fill="#152d46">Lithica Suite</text>
+  <text font-family="Arial" x="26" y="125" font-size="20" fill="#40546a">A geoscience ecosystem for fieldwork,</text>
+  <text font-family="Arial" x="26" y="151" font-size="20" fill="#40546a">mapping, reference and learning.</text>
+  <path d="M578 146h28m-9-9 9 9-9 9" fill="none" stroke="#0369a1" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

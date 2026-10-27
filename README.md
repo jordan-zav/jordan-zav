@@ -8,8 +8,8 @@ I build open and reproducible tools that connect geological interpretation,
 potential-field geophysics, remote sensing, terrain analysis and field-ready GIS.
 
 I study Geological Engineering at Universidad Nacional de Ingeniería in Lima,
-Peru. My work connects mineral exploration, environmental hydrogeology and
-geological hazards with reproducible computational methods. Alongside software
+Peru. My work connects mineral exploration and geological hazards with
+reproducible computational methods. Alongside software
 development, I contribute to research, technical training and student outreach.
 
 [![Website](https://img.shields.io/badge/website-gisgeo.dev-2563eb)](https://gisgeo.dev)
@@ -19,29 +19,28 @@ development, I contribute to research, technical training and student outreach.
 
 </div>
 
-## Lithica Suite
+## Making geoscience more accessible
 
-I develop **[Lithica Suite](https://github.com/jordan-zav/Lithica-Suite)**, a
-geoscience ecosystem for fieldwork, geological mapping, technical reference,
-scientific reading, modelling, remote sensing and education.
+I develop tools for fieldwork, mapping, petrography and reproducible analysis,
+with documentation that helps students, researchers and practitioners use them.
 
-Its tools include **Explorer, Mapper, Atlas, GeoTech, Notebook and Cloud Sync**.
-The public catalogue brings together product guides, development status and
-release information; source availability is documented for each product.
+### Featured projects
 
-## Explore my open-source tools
-
-Choose a project by the work you want to do: style a raster, find official GIS
-data, analyse spatial complexity or calculate normative mineralogy.
+Explore Lithica's geoscience ecosystem, PetroPyQAPF's desktop workflow and my
+open-source tools. Each project page explains its access and licensing terms.
 
 <table>
   <tr>
-    <td width="50%"><a href="https://github.com/jordan-zav/GeoRamp"><img src="assets/profile/georamp.svg" alt="GeoRamp: colour ramps, histograms and raster styling for QGIS" width="420"></a></td>
-    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: find and load official Peruvian geospatial services in QGIS" width="420"></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/Lithica-Suite"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/lithica-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/lithica.svg"><img src="assets/profile/lithica.svg" alt="Lithica Suite: fieldwork, geological mapping, technical reference and learning" width="420"></picture></a></td>
+    <td width="50%"><a href="https://gisgeo.dev/es/portfolio/petropyqapf/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/petropyqapf-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/petropyqapf.svg"><img src="assets/profile/petropyqapf.svg" alt="PetroPyQAPF: IUGS-QAPF classification, CIPW and petrographic image review" width="420"></picture></a></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://github.com/jordan-zav/MUSA"><img src="assets/profile/musa.svg" alt="MUSA: global and local multifractal analysis with GIS products" width="420"></a></td>
-    <td width="50%"><a href="https://github.com/jordan-zav/GeoNormPy"><img src="assets/profile/geonormpy.svg" alt="GeoNormPy: CIPW normative mineralogy from whole-rock chemistry" width="420"></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/GeoRamp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/georamp-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/georamp.svg"><img src="assets/profile/georamp.svg" alt="GeoRamp: colour ramps, histograms and raster styling for QGIS" width="420"></picture></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/peruspatial-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/peruspatial.svg"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: official Peruvian geospatial services in QGIS" width="420"></picture></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://github.com/jordan-zav/MUSA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/musa-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/musa.svg"><img src="assets/profile/musa.svg" alt="MUSA: global and local multifractal analysis with GIS products" width="420"></picture></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/GeoNormPy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/geonormpy-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/geonormpy.svg"><img src="assets/profile/geonormpy.svg" alt="GeoNormPy: CIPW normative mineralogy from whole-rock chemistry" width="420"></picture></a></td>
   </tr>
 </table>
 
@@ -72,8 +71,8 @@ available at [gisgeo.dev](https://gisgeo.dev).
 
 ## Research, training and community
 
-- Undergraduate research at UNI on environmental hydrogeology and the impact of
-  mine tailings on groundwater resources.
+- Undergraduate research at UNI on the impact of mine tailings on groundwater
+  resources.
 - Applied work combining geophysical, LiDAR and optical data for archaeological
   research, with technical documentation and team training.
 - Seequent Student Associate for Leapfrog Geo and Oasis montaj, supporting
