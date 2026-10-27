@@ -19,6 +19,16 @@ development, I contribute to research, technical training and student outreach.
 
 </div>
 
+## Lithica Suite
+
+I develop **[Lithica Suite](https://github.com/jordan-zav/Lithica-Suite)**, a
+geoscience ecosystem for fieldwork, geological mapping, technical reference,
+scientific reading, modelling, remote sensing and education.
+
+Its tools include **Explorer, Mapper, Atlas, GeoTech, Notebook and Cloud Sync**.
+The public catalogue brings together product guides, development status and
+release information; source availability is documented for each product.
+
 ## Explore my open-source tools
 
 Choose a project by the work you want to do: style a raster, find official GIS
@@ -44,8 +54,6 @@ data, analyse spatial complexity or calculate normative mineralogy.
 | Georeference a map | [GeoRefMaps](https://github.com/jordan-zav/GeoRefMaps) | Reviewed control points and a georeferenced GeoTIFF |
 | Convert coordinate tables | [PyTAB2GIS](https://github.com/jordan-zav/PyTAB2GIS) | Explicitly referenced GIS polygon deliverables |
 | Read field backups in QGIS | [Lithica Cloud Sync](https://github.com/jordan-zav/Lithica-Cloud-Sync) | Layers from Explorer and Mapper projects backed up to Google Drive |
-
-For fieldwork, mapping and technical reference, explore the [Lithica product catalogue](https://github.com/jordan-zav/Lithica-Suite). Product pages distinguish published releases, development status and source availability.
 
 Each repository documents installation, examples, supported workflows and
 methodological scope. More project pages, manuals and research material are
