@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+  <title id="title">GeoRamp</title>
+  <desc id="desc">Scientific colour ramps, histograms and repeatable raster styling. Project navigation card.</desc>
+  <g font-family="Arial"><rect x="1" y="1" width="638" height="188" rx="14" fill="#ffffff" stroke="#d8e1ec" stroke-width="2"/>
+  <path d="M16 1h608" stroke="#2563eb" stroke-width="3"/>
+  <rect x="24" y="25" width="70" height="70" rx="13" fill="#eff6ff"/>
+  <g transform="translate(35 35)" color="#2563eb"><g fill="none" stroke="#2563eb" stroke-width="2.2"><rect x="3" y="7" width="42" height="32" rx="5"/><path d="M11 31V21m9 10V14m9 17V18m9 13V11"/></g></g>
+  <text font-family="Arial" x="112" y="39" font-size="14" fill="#2563eb">QGIS · Raster visualization</text>
+  <text font-family="Arial" x="112" y="75" font-size="30" font-weight="700" fill="#152d46">GeoRamp</text>
+  <text font-family="Arial" x="26" y="125" font-size="20" fill="#40546a">Scientific colour ramps, histograms</text>
+  <text font-family="Arial" x="26" y="151" font-size="20" fill="#40546a">and repeatable raster styling.</text>
+  <path d="M578 146h28m-9-9 9 9-9 9" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

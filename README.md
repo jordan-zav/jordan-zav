@@ -19,6 +19,38 @@ development, I contribute to research, technical training and student outreach.
 
 </div>
 
+## Explore my open-source tools
+
+Choose a project by the work you want to do: style a raster, find official GIS
+data, analyse spatial complexity or calculate normative mineralogy.
+
+<table>
+  <tr>
+    <td width="50%"><a href="https://github.com/jordan-zav/GeoRamp"><img src="assets/profile/georamp.svg" alt="GeoRamp: colour ramps, histograms and raster styling for QGIS" width="420"></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: find and load official Peruvian geospatial services in QGIS" width="420"></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://github.com/jordan-zav/MUSA"><img src="assets/profile/musa.svg" alt="MUSA: global and local multifractal analysis with GIS products" width="420"></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/GeoNormPy"><img src="assets/profile/geonormpy.svg" alt="GeoNormPy: CIPW normative mineralogy from whole-rock chemistry" width="420"></a></td>
+  </tr>
+</table>
+
+### More tools
+
+| Task | Project | What it produces |
+| --- | --- | --- |
+| Visualize terrain | [QGIS-RRIM](https://github.com/jordan-zav/QGIS-RRIM) | Slope, differential openness and RRIM RGB rasters |
+| Extract raster signatures | [MIRAGE](https://github.com/jordan-zav/MIRAGE) | Connected curves and features for GIS review |
+| Georeference a map | [GeoRefMaps](https://github.com/jordan-zav/GeoRefMaps) | Reviewed control points and a georeferenced GeoTIFF |
+| Convert coordinate tables | [PyTAB2GIS](https://github.com/jordan-zav/PyTAB2GIS) | Explicitly referenced GIS polygon deliverables |
+| Read field backups in QGIS | [Lithica Cloud Sync](https://github.com/jordan-zav/Lithica-Cloud-Sync) | Layers from Explorer and Mapper projects backed up to Google Drive |
+
+For fieldwork, mapping and technical reference, explore the [Lithica product catalogue](https://github.com/jordan-zav/Lithica-Suite). Product pages distinguish published releases, development status and source availability.
+
+Each repository documents installation, examples, supported workflows and
+methodological scope. More project pages, manuals and research material are
+available at [gisgeo.dev](https://gisgeo.dev).
+
 ## What I work on
 
 | Domain | Focus |
@@ -29,22 +61,6 @@ development, I contribute to research, technical training and student outreach.
 | Petrology | CIPW normative mineralogy and petrographically informed machine learning |
 | Remote sensing | ASTER/Landsat/DEM preparation, provenance and mineral-mapping inputs |
 | Scientific software | Transparent assumptions, testable algorithms and auditable outputs |
-
-## Featured open-source projects
-
-| Project | Purpose | Stack |
-| --- | --- | --- |
-| [GeoRamp](https://github.com/jordan-zav/GeoRamp) | Scientific colour ramps, interactive histograms and raster styling | QGIS, Python |
-| [PeruSpatial Hub](https://github.com/jordan-zav/Peruspatial-Hub) | Search and load official Peruvian ArcGIS REST/WMS services in QGIS | QGIS, Python, REST, WMS |
-| [MUSA](https://github.com/jordan-zav/MUSA) | Global/local multifractal analysis, moving windows and structural GIS analysis | Python, NumPy, GeoPandas |
-| [GeoNormPy](https://github.com/jordan-zav/GeoNormPy) | Reproducible CIPW normative mineralogy from whole-rock chemistry | Python, pandas |
-| [QGIS-RRIM](https://github.com/jordan-zav/QGIS-RRIM) | Slope, differential openness and RRIM RGB terrain visualization | QGIS, GDAL, NumPy |
-| [MIRAGE](https://github.com/jordan-zav/MIRAGE) | Multiscale extraction of geological and archaeological raster signatures | Python, scikit-image, GeoPandas |
-| [GeoRefMaps](https://github.com/jordan-zav/GeoRefMaps) | Semi-automatic georeferencing of map PDFs and scanned figures | Python, PyMuPDF, Rasterio, OCR |
-| [PyTAB2GIS](https://github.com/jordan-zav/PyTAB2GIS) | Convert coordinate tables into explicitly referenced GIS polygons | Python, GeoPandas, Shapely |
-
-More project pages, manuals and research material are available at
-[gisgeo.dev](https://gisgeo.dev).
 
 ## Research, training and community
 

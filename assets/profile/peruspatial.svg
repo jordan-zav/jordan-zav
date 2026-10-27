@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+  <title id="title">PeruSpatial Hub</title>
+  <desc id="desc">Find Peruvian public services and load them directly in QGIS. Project navigation card.</desc>
+  <g font-family="Arial"><rect x="1" y="1" width="638" height="188" rx="14" fill="#ffffff" stroke="#d8e1ec" stroke-width="2"/>
+  <path d="M16 1h608" stroke="#0f766e" stroke-width="3"/>
+  <rect x="24" y="25" width="70" height="70" rx="13" fill="#f0fdfa"/>
+  <g transform="translate(35 35)" color="#0f766e"><g fill="none" stroke="#0f766e" stroke-width="2.2"><path d="m4 11 13-5 14 5 13-5v31l-13 5-14-5-13 5zM17 6v31m14-26v31"/><path d="M24 17a6 6 0 0 1 12 0c0 5-6 10-6 10s-6-5-6-10Z" fill="white"/></g></g>
+  <text font-family="Arial" x="112" y="39" font-size="14" fill="#0f766e">QGIS · Official geospatial data</text>
+  <text font-family="Arial" x="112" y="75" font-size="30" font-weight="700" fill="#152d46">PeruSpatial Hub</text>
+  <text font-family="Arial" x="26" y="125" font-size="20" fill="#40546a">Find Peruvian public services</text>
+  <text font-family="Arial" x="26" y="151" font-size="20" fill="#40546a">and load them directly in QGIS.</text>
+  <path d="M578 146h28m-9-9 9 9-9 9" fill="none" stroke="#0f766e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
