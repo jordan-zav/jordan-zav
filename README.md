@@ -8,9 +8,9 @@ I build open and reproducible tools that connect geological interpretation,
 potential-field geophysics, remote sensing, terrain analysis and field-ready GIS.
 
 I study Geological Engineering at Universidad Nacional de Ingeniería in Lima,
-Peru. My work connects mineral exploration and geological hazards with
-reproducible computational methods. Alongside software
-development, I contribute to research, technical training and student outreach.
+Peru. My interests include mineral exploration and geological hazards.
+Alongside software development, I contribute to research, technical training
+and student outreach.
 
 [![Website](https://img.shields.io/badge/website-gisgeo.dev-2563eb)](https://gisgeo.dev)
 [![Location](https://img.shields.io/badge/location-Lima%2C%20Peru-7c3aed)](https://github.com/jordan-zav)
