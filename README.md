@@ -4,6 +4,8 @@
 
 **Geological engineering student at UNI · applied geophysics · GIS · scientific software**
 
+Funky! Powered by geoscience and ⑨ energy.
+
 I build open and reproducible tools that connect geological interpretation,
 potential-field geophysics, remote sensing, terrain analysis and field-ready GIS.
 
