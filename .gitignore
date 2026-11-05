@@ -7,3 +7,5 @@ venv/
 .devresources.local.cmd
 .devresources.runner.ps1
 *.svg.tmp
+
+AGENTS.md
