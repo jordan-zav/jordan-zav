@@ -39,12 +39,16 @@ open-source tools. Each project page explains its access and licensing terms.
     <td width="50%"><a href="https://gisgeo.dev/es/portfolio/petropyqapf/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/petropyqapf-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/petropyqapf.svg"><img src="assets/profile/petropyqapf.svg" alt="PetroPyQAPF: IUGS-QAPF classification, CIPW and petrographic image review" width="420"></picture></a></td>
   </tr>
   <tr>
+    <td width="50%"><a href="https://github.com/jordan-zav/TerraWorkbench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/terraworkbench-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/terraworkbench.svg"><img src="assets/profile/terraworkbench.svg" alt="TerraWorkbench: gravity and magnetic processing, survey corrections and 3D inversion in QGIS" width="420"></picture></a></td>
     <td width="50%"><a href="https://github.com/jordan-zav/GeoRamp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/georamp-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/georamp.svg"><img src="assets/profile/georamp.svg" alt="GeoRamp: colour ramps, histograms and raster styling for QGIS" width="420"></picture></a></td>
-    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/peruspatial-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/peruspatial.svg"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: official Peruvian geospatial services in QGIS" width="420"></picture></a></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/jordan-zav/MUSA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/musa-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/musa.svg"><img src="assets/profile/musa.svg" alt="MUSA: global and local multifractal analysis with GIS products" width="420"></picture></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/MIRAGE"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/mirage-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/mirage.svg"><img src="assets/profile/mirage.svg" alt="MIRAGE: lineament and connected feature extraction from GeoTIFF rasters" width="420"></picture></a></td>
+  </tr>
+  <tr>
     <td width="50%"><a href="https://github.com/jordan-zav/GeoNormPy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/geonormpy-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/geonormpy.svg"><img src="assets/profile/geonormpy.svg" alt="GeoNormPy: CIPW normative mineralogy from whole-rock chemistry" width="420"></picture></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/peruspatial-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/peruspatial.svg"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: official Peruvian geospatial services in QGIS" width="420"></picture></a></td>
   </tr>
 </table>
 
@@ -53,7 +57,6 @@ open-source tools. Each project page explains its access and licensing terms.
 | Task | Project | What it produces |
 | --- | --- | --- |
 | Visualize terrain | [QGIS-RRIM](https://github.com/jordan-zav/QGIS-RRIM) | Slope, differential openness and RRIM RGB rasters |
-| Extract raster signatures | [MIRAGE](https://github.com/jordan-zav/MIRAGE) | Connected curves and features for GIS review |
 | Georeference a map | [GeoRefMaps](https://github.com/jordan-zav/GeoRefMaps) | Reviewed control points and a georeferenced GeoTIFF |
 | Convert coordinate tables | [PyTAB2GIS](https://github.com/jordan-zav/PyTAB2GIS) | Explicitly referenced GIS polygon deliverables |
 | Read field backups in QGIS | [Lithica Cloud Sync](https://github.com/jordan-zav/Lithica-Cloud-Sync) | Layers from Explorer and Mapper projects backed up to Google Drive |

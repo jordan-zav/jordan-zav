@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+  <title id="title">MIRAGE</title>
+  <desc id="desc">Extract lineaments and connected features from GeoTIFF rasters.</desc>
+  <g font-family="Arial"><rect x="1" y="1" width="638" height="188" rx="14" fill="#ffffff" stroke="#d8e1ec" stroke-width="2"/>
+  <path d="M16 1h608" stroke="#a13e16" stroke-width="3"/>
+  <rect x="24" y="25" width="70" height="70" rx="13" fill="#eff6ff"/>
+  <g transform="translate(35 35)" color="#a13e16"><g fill="none" stroke="#a13e16" stroke-width="2.2"><rect x="4" y="6" width="40" height="37" rx="4"/><path d="M5 33l9-11 10 5 10-13 10 4M18 42l6-15"/></g></g>
+  <text font-family="Arial" x="112" y="39" font-size="14" fill="#a13e16">Python · Raster feature extraction</text>
+  <text font-family="Arial" x="112" y="75" font-size="30" font-weight="700" fill="#152d46">MIRAGE</text>
+  <text font-family="Arial" x="26" y="125" font-size="20" fill="#40546a">Extract lineaments and connected</text>
+  <text font-family="Arial" x="26" y="151" font-size="20" fill="#40546a">features from GeoTIFF rasters.</text>
+  <path d="M578 146h28m-9-9 9 9-9 9" fill="none" stroke="#a13e16" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

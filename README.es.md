@@ -38,12 +38,16 @@ conservan su identidad visual y cambian con el tema claro u oscuro de GitHub.
     <td width="50%"><a href="https://gisgeo.dev/es/portfolio/petropyqapf/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/petropyqapf-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/petropyqapf.svg"><img src="assets/profile/petropyqapf.svg" alt="PetroPyQAPF: IUGS-QAPF classification, CIPW and petrographic image review" width="420"></picture></a></td>
   </tr>
   <tr>
+    <td width="50%"><a href="https://github.com/jordan-zav/TerraWorkbench"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/terraworkbench-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/terraworkbench.svg"><img src="assets/profile/terraworkbench.svg" alt="TerraWorkbench: procesamiento gravimétrico y magnético, correcciones e inversión 3D en QGIS" width="420"></picture></a></td>
     <td width="50%"><a href="https://github.com/jordan-zav/GeoRamp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/georamp-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/georamp.svg"><img src="assets/profile/georamp.svg" alt="GeoRamp: colour ramps, histograms and raster styling for QGIS" width="420"></picture></a></td>
-    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/peruspatial-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/peruspatial.svg"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: official Peruvian geospatial services in QGIS" width="420"></picture></a></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/jordan-zav/MUSA"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/musa-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/musa.svg"><img src="assets/profile/musa.svg" alt="MUSA: global and local multifractal analysis with GIS products" width="420"></picture></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/MIRAGE"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/mirage-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/mirage.svg"><img src="assets/profile/mirage.svg" alt="MIRAGE: extracción de lineamientos y rasgos conectados a partir de rásteres GeoTIFF" width="420"></picture></a></td>
+  </tr>
+  <tr>
     <td width="50%"><a href="https://github.com/jordan-zav/GeoNormPy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/geonormpy-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/geonormpy.svg"><img src="assets/profile/geonormpy.svg" alt="GeoNormPy: CIPW normative mineralogy from whole-rock chemistry" width="420"></picture></a></td>
+    <td width="50%"><a href="https://github.com/jordan-zav/Peruspatial-Hub"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/profile/peruspatial-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/profile/peruspatial.svg"><img src="assets/profile/peruspatial.svg" alt="PeruSpatial Hub: official Peruvian geospatial services in QGIS" width="420"></picture></a></td>
   </tr>
 </table>
 
@@ -52,7 +56,6 @@ conservan su identidad visual y cambian con el tema claro u oscuro de GitHub.
 | Tarea | Proyecto | Resultado |
 | --- | --- | --- |
 | Visualizar terreno | [QGIS-RRIM](https://github.com/jordan-zav/QGIS-RRIM) | Pendiente, apertura diferencial y RRIM RGB |
-| Extraer firmas de imagen | [MIRAGE](https://github.com/jordan-zav/MIRAGE) | Curvas y rasgos para revisión GIS |
 | Georreferenciar mapas | [GeoRefMaps](https://github.com/jordan-zav/GeoRefMaps) | Controles revisados y GeoTIFF georreferenciado |
 | Convertir tablas | [PyTAB2GIS](https://github.com/jordan-zav/PyTAB2GIS) | Polígonos con CRS explícito |
 | Leer respaldos de campo | [Lithica Cloud Sync](https://github.com/jordan-zav/Lithica-Cloud-Sync) | Capas de Explorer/Mapper respaldadas en Drive, dentro de QGIS |

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+  <title id="title">TerraWorkbench</title>
+  <desc id="desc">Gravity and magnetic processing, survey corrections and 3D inversion.</desc>
+  <g font-family="Arial"><rect x="1" y="1" width="638" height="188" rx="14" fill="#ffffff" stroke="#d8e1ec" stroke-width="2"/>
+  <path d="M16 1h608" stroke="#227044" stroke-width="3"/>
+  <rect x="24" y="25" width="70" height="70" rx="13" fill="#eff6ff"/>
+  <g transform="translate(35 35)" color="#227044"><g fill="none" stroke="#227044" stroke-width="2.2"><path d="M3 39h44M6 31l9-15 7 9 9-17 13 23M6 35h38"/></g></g>
+  <text font-family="Arial" x="112" y="39" font-size="14" fill="#227044">QGIS · Applied geophysics</text>
+  <text font-family="Arial" x="112" y="75" font-size="30" font-weight="700" fill="#152d46">TerraWorkbench</text>
+  <text font-family="Arial" x="26" y="125" font-size="20" fill="#40546a">Gravity and magnetic processing,</text>
+  <text font-family="Arial" x="26" y="151" font-size="20" fill="#40546a">survey corrections and 3D inversion.</text>
+  <path d="M578 146h28m-9-9 9 9-9 9" fill="none" stroke="#227044" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
